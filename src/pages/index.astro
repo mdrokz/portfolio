@@ -1,74 +1,202 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import Circle from "../components/icons/Circle.astro";
 import Nav from "../components/Nav.astro";
 ---
 
 <Layout title="Mohammad Munshi - Full Stack Engineer">
-	<main class="flex px-4">
+	<main class="flex space-x-5 space-y-5">
 		<Nav />
-		<div class="flex-col">
-			<div>
-				<h1>About</h1>
+		<section class="flex flex-col">
+			<div class="flex-col max-w-[100px] max-h-[56px] items-center">
+				<Circle width="100" height="56" />
+				<!-- <span class="font-fira font-bold text-lg text-white">bout</span> -->
 			</div>
-			<div>
-				<h3>Hey!</h3>
-				<p>
-					I am a seasoned full-stack software engineer based in India,
-					with expertise in ___. Passionate about embracing emerging
-					technologies, I thrive on exploring and innovating with
-					cutting-edge tech solutions.
-				</p>
+			<div class="flex flex-col justify-center space-y-2">
+				<div
+					class="flex flex-col justify-center items-center space-y-2"
+				>
+					<h3
+						class="text-center text-primary font-noto font-medium text-lg"
+					>
+						Hey! I am
+					</h3>
+					<span class="text-white text-5xl font-bold"
+						>Mohammad Munshi</span
+					>
+				</div>
+				<div class="flex flex-col justify-center items-center">
+					<p class="font-noto text-lg text-white">
+						I am a seasoned full-stack software engineer based in
+						India, with expertise in
+					</p>
+					<section class="animation">
+						<div class="slider text-lg">
+							<div>Carlos Córdova</div>
+							<div>Web Developer</div>
+							<div>Systems Engineer</div>
+						</div>
+					</section>
+					<!-- <section class="animation">
+						<div class="first"><div>Carlos Córdova</div></div>
+						<div class="second"><div>Web Developer</div></div>
+						<div class="third"><div>Systems Engineer</div></div>
+					</section> -->
+					<p class="font-noto text-lg text-white">
+						Passionate about embracing emerging technologies, I
+						thrive on exploring and innovating with cutting-edge
+						tech solutions.
+					</p>
+				</div>
 			</div>
+			<section>
+				<div
+					class="text-white flex flex-col items-center justify-center space-y-2"
+				>
+					<div class="flex justify-center">
+						<span>
+							<span
+								class="font-fira capitalize text-2xl font-bold"
+								>My Services</span
+							>
+							<hr class="bg-underline-gradient" />
+						</span>
+					</div>
+					<p class="font-noto w-[40em] text-lg text-clip p-2">
+						I provide a comprehensive range of services, including
+						website and mobile application development, advanced
+						backend solutions utilizing microservice architecture,
+						expertise in reverse engineering, game development, and
+						DevOps integration.
+					</p>
+				</div>
+				<div class="flex justify-center">
+					<div class="grid grid-cols-3 gap-4">
+						<Card title="Web Development" text="test" />
+						<Card title="Backend Development" text="test" />
+						<Card title="Mobile Development" text="test" />
 
-			<div>
-				
-			</div>
-		</div>
+						<Card title="Game Development" text="test" />
+						<Card title="Dev ops" text="test" />
+						<Card title="Reverse Engineering" text="test" />
+					</div>
+				</div>
+			</section>
+		</section>
 	</main>
 </Layout>
 
 <style>
+	/* .animation {
+		height: 50px;
+		overflow: hidden;
+		margin-left: 1rem;
+	}
+
+	.animation > div > div {
+		padding: 0.25rem 0.75rem;
+		height: 1.81rem;
+		margin-bottom: 1.81rem;
+		display: inline-block;
+	}
+
+	.animation div:first-child {
+		animation: text-animation 8s infinite;
+	}
+
+	.first div {
+		background-color: #5FB4D3;
+	}
+	.second div {
+		background-color: #5FB4D3;
+	}
+	.third div {
+		background-color: #5FB4D3;
+	}
+
+	@keyframes text-animation {
+		0% {
+			margin-top: 0;
+		}
+		10% {
+			margin-top: 0;
+		}
+		20% {
+			margin-top: -5.62rem;
+		}
+		30% {
+			margin-top: -5.62rem;
+		}
+		40% {
+			margin-top: -11.24rem;
+		}
+		60% {
+			margin-top: -11.24rem;
+		}
+		70% {
+			margin-top: -5.62rem;
+		}
+		80% {
+			margin-top: -5.62rem;
+		}
+		90% {
+			margin-top: 0;
+		}
+		100% {
+			margin-top: 0;
+		}
+	} */
+
+	.animation {
+		height: 2rem;
+		width: 15%;
+		overflow: hidden;
+		margin-left: 1rem;
+		color: white;
+		position: relative;
+		border-bottom: 2px solid theme("colors.primary"); /* Static underline */
+	}
+
+	.slider {
+		position: absolute;
+		top: 0;
+		left: 0;
+		color: white;
+		animation: text-slide 8s infinite;
+		width: 100%; /* This ensures the slider takes the full width of its parent */
+	}
+
+	.slider > div {
+		padding: 0.25rem 0;
+		height: 1.5rem;
+		color: white;
+		display: inline-block;
+		white-space: nowrap; /* Prevents the text from wrapping */
+	}
+
+	@keyframes text-slide {
+		0%,
+		10%,
+		90%,
+		100% {
+			transform: translateY(0);
+		}
+		20%,
+		30%,
+		70%,
+		80% {
+			transform: translateY(-30%);
+		}
+		40%,
+		60% {
+			transform: translateY(-65%);
+		}
+	}
+
 	main {
 		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
+		/* max-width: 60ch; */
+		/* width: 50%; */
 	}
 </style>
