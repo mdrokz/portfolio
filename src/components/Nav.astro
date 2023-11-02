@@ -1,31 +1,37 @@
 ---
-export interface Props {
-}
+import IconCircle from "./CircleHolder.astro";
+import About from "./icons/About.astro";
+export interface Props {}
 
 // const { href, title, body } = Astro.props;
 ---
 
-<nav class="bg-[#424669] px-4 rounded-md">
-    <ul>
+<nav class="bg-[#424669] space-y-4 p-4 rounded-sm">
+    <ul class="space-y-4">
         <li>
-            C
+            <IconCircle>
+                <About />
+            </IconCircle>
         </li>
         <li>
-            P
+            <IconCircle>
+                <About />
+            </IconCircle>
         </li>
         <li>
-            W
+            <IconCircle>
+                <About />
+            </IconCircle>
         </li>
         <li>
-            S
+            <IconCircle>
+                <About />
+            </IconCircle>
         </li>
         <li>
-            B
+            <IconCircle>
+                <About />
+            </IconCircle>
         </li>
     </ul>
-</div>
-
-
-
-<style>
-</style>
+</nav>
