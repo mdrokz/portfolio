@@ -1,15 +1,24 @@
 ---
+import PlaceHolder from "./icons/PlaceHolder.astro";
 export interface Props {
+	text: string;
+	title: string;
 }
 
-// const { href, title, body } = Astro.props;
+const { text, title } = Astro.props;
 ---
 
-<div class="mx-2">
-	TEXT
+<div
+	class="flex flex-col space-y-2 text-center items-center min-h-[50px] min-w-[50px] rounded-md bg-[#666F9D] shadow-md shadow-slate-700"
+>
+	<PlaceHolder />
+
+	<span class="font-fira font-bold text-xl text-white">
+		{title}
+	</span>
+	<span class="font-noto font-medium text-lg text-white">
+		{text}
+	</span>
 </div>
 
-
-
-<style>
-</style>
+<style></style>
